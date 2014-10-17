@@ -8,6 +8,8 @@ package fctc.controle.memoria;
 
 import fctc.modelo.Baixado;
 import fctc.modelo.Pendente;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -41,7 +43,20 @@ public class MemoriaPendenteDAO {
     }
     
     public List<Pendente> listar() {
-        //Collections.sort(pendentes);
+        Collections.sort(pendentes, new Comparator<long>(){
+
+            @Override
+            public int compare(long o1, long o2) {
+                if(o1 < o2)
+                    return -1;
+                else
+                    if(o1 == o2)
+                        return 0;
+                else
+                        return 1;
+            }
+
+        });
         return pendentes;
     }
 }

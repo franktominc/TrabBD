@@ -17,5 +17,5 @@ import java.util.List;
 public interface BaixadoDAO {
     public boolean incluir(Baixado baixado);
     public Baixado buscar(Long id);
-    public List<Baixado> listar(Comparator<Baixado> cmp'');
+    public List<Baixado> listar(Comparator<Baixado> cmp);
 }
