@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 
-package fctc.controle;
+package fctc.modelo;
 
-import fctc.modelo.Baixado;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  *
  * @author Cristhian
  */
-public interface BaixadoDAO {
-    public boolean incluir(Baixado baixado);
-    public Baixado buscar(Long id);
-    public List<Baixado> listar(Comparator<Baixado> cmp'');
+public class PendenteInOrder implements Comparator<Pendente>{
+
+    @Override
+    public int compare(Pendente a, Pendente b) {
+        return a.getId().compareTo(b.getId());
+    }
+    
 }
