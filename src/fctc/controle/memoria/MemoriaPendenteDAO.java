@@ -43,19 +43,16 @@ public class MemoriaPendenteDAO {
     }
     
     public List<Pendente> listar() {
-        Collections.sort(pendentes, new Comparator<long>(){
 
+        Collections.sort(pendentes, new Comparator<Pendente>() {
             @Override
-            public int compare(long o1, long o2) {
-                if(o1 < o2)
+            public int compare(Pendente o1, Pendente o2) {
+                if(o1.getId() < o2.getId())
                     return -1;
-                else
-                    if(o1 == o2)
-                        return 0;
-                else
-                        return 1;
+                if(o1.getId() == o2.getId())
+                    return 0;
+                return 1;
             }
-
         });
         return pendentes;
     }
